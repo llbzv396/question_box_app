@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="text-center">
+    <h1>All Users</h1>
+    <ul class="list-group pt-2">
+      <% @users.each do |user| %>
+      <li class="list-group-item h5"><%= user.id %>. <%= link_to user.name, "users/#{user.id}" %></li>
+     <% end %>
+    </ul>
+  </div>
+</div>
