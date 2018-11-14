@@ -20,6 +20,9 @@
             <%= link_to "My page", "/users/#{current_user.id}", class: "nav-link active" %>
           </li>
           <li class="nav-item">
+            <%= link_to "Users", users_path, class: "nav-link active" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Log out", logout_path, method: :delete, class: "nav-link active" %>
           </li>
         <% else %>
