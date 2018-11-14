@@ -10,5 +10,8 @@
         回答:<%= micropost.answer %>
       </div>
     </li>
+    <% if current_user?(@user) %>
+    <%= link_to "DELETE", "/users/#{current_user.id}", method: :delete, data: { confirm: "削除しますか？"} %>
+    <% end %>
   </div>
 <% end %>

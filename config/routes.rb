@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get '/about',     to: 'top_pages#about'
   get '/contact',   to: 'top_pages#contact'
 
-  get  '/signup',    to: 'users#new'
-  post '/signup',    to: 'users#create'
-  get  '/users/:id', to: 'users#show'
-  get  '/users',     to: 'users#index'
+  get    '/signup',    to: 'users#new'
+  post   '/signup',    to: 'users#create'
+  delete '/users/:id', to: 'users#destroy'
+  get    '/users/:id', to: 'users#show'
+  get    '/users',     to: 'users#index'
 
   get    '/login',  to: 'sessions#new'
   post   '/login',  to: 'sessions#create'
