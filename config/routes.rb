@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/contact',   to: 'top_pages#contact'
 
   get '/signup',    to: 'users#new'
+  post '/signup',   to: 'users#create'
   get '/login',     to: 'sessions#new'
+
+  get '/users/:id', to: 'users#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
