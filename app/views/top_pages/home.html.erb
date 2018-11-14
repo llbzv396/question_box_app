@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-center">
-    <h1>To Study App !</h1>
+    <h1><strong>暇つぶし脳トレサイト</strong></h1>
     <% if logged_in? %>
       <h2>Form</h2>
       <%= form_for(@micropost, url: post_path) do |f| %>
@@ -20,8 +20,8 @@
         <%= render 'microposts/micropost' %>
       </ul>
     <% else %>
-      <h4>This is my first app!</h4>
-      <h4>Let's join us!</h4>
+      <h4><%= link_to "ログイン", login_path %>して早速使ってみよう！</h4>
+      <h4>空き時間を使って賢くなろう！</h4>
     <% end %>
   </div>
 </div>
