@@ -1,10 +1,14 @@
 <% @microposts.each do |micropost| %>
-  <div class="pt-3">
-    <h3>投稿者:<%= micropost.user.name %></h3>
-    <li class="list-group-item">
-      <h4>質問:<%= micropost.question %></h4>
-      <button type="button" class="btn btn-primary mt-2" data-toggle="collapse" data-target="#<%= micropost.id %>">答えはこちら</button>
-      <div id="<%= micropost.id %>" class="collapse pt-3"><h4>回答:<%= micropost.answer %></h4></div>
+  <div class="pt-3 h4">
+    投稿者:<%= micropost.user.name %>
+    <li class="list-group-item h4">
+      質問:<%= micropost.question %><br>
+      <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="collapse" data-target="#<%= micropost.id %>">
+        答えはこちら
+      </button>
+      <div id="<%= micropost.id %>" class="collapse pt-3">
+        回答:<%= micropost.answer %>
+      </div>
     </li>
   </div>
 <% end %>
