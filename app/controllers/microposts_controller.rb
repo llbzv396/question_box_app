@@ -7,7 +7,8 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_path
     else
-      redirect_to root_path
+      @microposts = Micropost.all.includes(:user)
+      render 'top_pages/home'
     end
   end
 
