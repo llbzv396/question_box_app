@@ -2,12 +2,12 @@
   <div class="pt-3 h4">
     投稿者:<%= micropost.user.name %>
     <% if current_user?(micropost.user) %>
-    | <%= link_to "User Delete", "/users/#{current_user.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "h5" %>
+    <%= link_to "User Delete", "/users/#{current_user.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
     <% end %>
     <li class="list-group-item h4">
       質問:<%= micropost.question %>
       <% if current_user?(micropost.user) %>
-      | <%= link_to "Post Delete", "/post/#{micropost.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "h5" %>
+      <%= link_to "Post Delete", "/post/#{micropost.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
       <% end %><br>
       <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="collapse" data-target="#<%= micropost.id %>">
         答えはこちら
