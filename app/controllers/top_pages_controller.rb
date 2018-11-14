@@ -12,5 +12,4 @@ class TopPagesController < ApplicationController
 
   def contact
   end
-
 end

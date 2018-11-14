@@ -10,5 +10,4 @@ class TopPagesControllerTest < ActionDispatch::IntegrationTest
     get top_pages_help_url
     assert_response :success
   end
-
 end

@@ -22,5 +22,5 @@
 
 .byebug_history
 
-# vender はいらぬ
-vender/
+# vendor はいらぬ
+vendor/

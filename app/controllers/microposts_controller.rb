@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only:[:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
 
   def create
     @micropost = current_user.microposts.new(micropost_params)
@@ -15,6 +15,7 @@ class MicropostsController < ApplicationController
   end
 
   private
+
   def micropost_params
     params.require(:micropost).permit(:question, :answer)
   end
