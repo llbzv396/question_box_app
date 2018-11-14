@@ -8,7 +8,13 @@
       質問:<%= micropost.question %>
       <% if current_user?(micropost.user) %>
       <%= link_to "Post Delete", "/post/#{micropost.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
-      <% end %><br>
+      <% end %>
+      <% if favorite?(current_user, micropost) %>
+        <%= link_to "お気に入り済み", "/favorites/#{micropost.id}", method: :delete, class: "btn btn-sm btn-outline-danger" %>
+      <% else %>
+        <%= link_to "お気に入り", "/favorites/#{micropost.id}", method: :post, class: "btn btn-sm btn-outline-danger" %>
+      <% end %>
+      <br>
       <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="collapse" data-target="#<%= micropost.id %>">
         答えはこちら
       </button>
