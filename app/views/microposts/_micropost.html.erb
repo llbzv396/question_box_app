@@ -1,0 +1,8 @@
+<% @microposts.each do |micropost| %>
+  <h3>投稿者:<%= micropost.user.name %></h3>
+  <li class="list-group-item">
+    <span>質問:<%= micropost.question %></span>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#<%= micropost.id %>">答えはこちら</button>
+    <div id="<%= micropost.id %>" class="collapse">回答:<%= micropost.answer %></div>
+  </li>
+<% end %>
