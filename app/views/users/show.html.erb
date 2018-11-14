@@ -1,10 +1,11 @@
+<% provide(:title, "ユーザー詳細ページ") %>
 <div class="container text-center">
   <ul class="list-group pt-2 pb-3">
     <li class="list-group-item h2">
-    <%= @user.name %>
+    ユーザー名　<%= @user.name %>
     </li>
   </ul>
-  <h2>User's Microposts(<%= @microposts.all.count %>)</h2>
+  <h2>投稿一覧(<%= @microposts.all.count %>)</h2>
   <ul class="list-group">
     <%= render 'microposts/micropost' %>
   </ul>

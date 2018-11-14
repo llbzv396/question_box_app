@@ -1,18 +1,19 @@
+<% provide(:title, "お問い合わせ") %>
 <div class="text-center container">
-  <h1>Contact Page</h1>
+  <h1>お問い合わせ</h1>
   <%= form_tag("https://formspree.io/llbzv396@ybb.ne.jp", method: :post) do %>
     <input type="hidden" name="_next" value= "/">
     <div class="form-group">
-      <input type="text" name="name" class="form-control" placeholder="Name" required>
+      <input type="text" name="name" class="form-control" placeholder="名前" required>
     </div>
     <div class="form-group">
-      <input type="text" name="email" class="form-control" placeholder="E-mail" required>
+      <input type="text" name="email" class="form-control" placeholder="メール" required>
     </div>
     <div class="form-group">
-      <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+      <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="メッセージ" required></textarea>
     </div>
     <div class="form-group">
-      <input type="submit" class="btn btn-primary btn-outline-info btn-block" value="Send Message">
+      <input type="submit" class="btn btn-primary btn-outline-info btn-block" value="送信">
     </div>
   <% end %>
 </div>

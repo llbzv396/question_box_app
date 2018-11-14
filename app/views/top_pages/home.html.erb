@@ -2,22 +2,22 @@
   <div class="text-center">
     <h1><strong>暇つぶし脳トレサイト</strong></h1>
     <% if logged_in? %>
-      <h2>Form</h2>
+      <h2>投稿フォーム</h2>
       <%= form_for(@micropost, url: post_path) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
-          <%= f.label :question %>
-          <%= f.text_field :question, class: "form-control", placeholder: "Write question" %>
+          <%= f.label :質問 %>
+          <%= f.text_field :question, class: "form-control", placeholder: "質問はこちら" %>
         </div>
         <div class="form-group">
-          <%= f.label :answer %>
-          <%= f.text_field :answer, class: "form-control", placeholder: "Write answer" %>
+          <%= f.label :回答 %>
+          <%= f.text_field :answer, class: "form-control", placeholder: "回答はこちら" %>
         </div>
         <div class="form-group">
-          <%= f.submit "Post", class: "btn btn-outline-info btn-block" %>
+          <%= f.submit "投稿", class: "btn btn-outline-info btn-block" %>
         </div>
       <% end %>
-      <h2>Microposts(<%= @microposts.all.count %>)</h2>
+      <h2>全ての投稿(<%= @microposts.all.count %>)</h2>
       <ul class="list-group">
         <%= render 'microposts/micropost' %>
       </ul>
