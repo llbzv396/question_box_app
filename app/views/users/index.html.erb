@@ -6,9 +6,6 @@
       <% @users.each do |user| %>
         <li class="list-group-item h5">
           <%= link_to user.name, "users/#{user.id}" %>
-          <% if current_user?(user) %>
-            <%= link_to "Delete", "/users/#{current_user.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
-          <% end %>
         </li>
       <% end %>
     </ul>

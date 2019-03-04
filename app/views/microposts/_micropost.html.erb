@@ -2,17 +2,25 @@
   <div class="pt-3 h4">
     投稿者:<%= micropost.user.name %>
     <% if current_user?(micropost.user) %>
-    <%= link_to "User Delete", "/users/#{current_user.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
+      <%= link_to "/users/#{current_user.id}", method: :delete, data: { confirm: "ユーザーを削除しますか？"} do %>
+        <%= fa_icon("trash") %>
+      <% end %>
     <% end %>
     <li class="list-group-item h4">
       質問:<%= micropost.question %>
       <% if current_user?(micropost.user) %>
-      <%= link_to "Post Delete", "/post/#{micropost.id}", method: :delete, data: { confirm: "削除しますか？"}, class: "btn btn-sm btn-outline-info" %>
+        <%= link_to "/post/#{micropost.id}", method: :delete, data: { confirm: "投稿を削除しますか？"} do %>
+          <%= fa_icon("trash")%>
+        <% end %>
       <% end %>
       <% if favorite?(current_user, micropost) %>
-        <%= link_to "お気に入り済み", "/favorites/#{micropost.id}", method: :delete, class: "btn btn-sm btn-outline-danger" %>
+        <%= link_to "/favorites/#{micropost.id}", method: :delete do %>
+          <%= fa_icon("star") %>
+        <% end %>
       <% else %>
-        <%= link_to "お気に入り", "/favorites/#{micropost.id}", method: :post, class: "btn btn-sm btn-outline-danger" %>
+        <%= link_to "/favorites/#{micropost.id}", method: :post do %>
+          <%= fa_icon("star-o") %>
+        <% end %>
       <% end %>
       <br>
       <button type="button" class="btn btn-outline-info mt-2 btn-block" data-toggle="collapse" data-target="#<%= micropost.id %>">
