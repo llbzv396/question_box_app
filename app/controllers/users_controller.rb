@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :show, :destroy]
+  after_action :set_url_to_session, only: [:show]
+
   def index
     @users = User.all
   end
@@ -34,5 +36,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_url_to_session
+    session[:url] = request.path
+    p session[:url]
   end
 end
