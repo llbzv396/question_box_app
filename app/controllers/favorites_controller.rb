@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    Favorite.find_by(micropost_id: params[:id]).delete
+    Favorite.find_by(user_id: current_user.id, micropost_id: params[:id]).delete
     redirect_to root_path
   end
 end
